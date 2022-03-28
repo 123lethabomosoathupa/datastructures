@@ -160,3 +160,5 @@ function run(){
     checkOut(cust01);
     displayMovie(cust04);
 }
+
+run();

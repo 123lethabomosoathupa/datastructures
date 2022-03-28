@@ -144,7 +144,7 @@ function checkOut(customer) {
         console.log(customer.movie + " is available.");
     }
     else {
-        console.log(movie + " is not available.");
+        console.log(customer.movie + " is not available.");
     }
 }
 
