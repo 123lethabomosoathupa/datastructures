@@ -1,10 +1,10 @@
-//Question 3
-class Person {
-    constructor(name, gender) {
-        this.name = name;
-        this.gender = gender;
-    }
-}
+var movies = ['The Shawshank Redemption', 'The Godfather', 'The Godfather: Part II',
+    'Pulp Fiction', 'The Good, the Bad and the Ugly', '12 Angry Men', 'Schindler’s List',
+    'The Dark Knight', 'The Lord of the Rings: The Return of the King',
+    'Fight Club', 'Star Wars: Episode V - The Empire Strikes Back',
+    'One Flew Over the Cuckoo’s Nest', 'The Lord of the Rings: The Fellowship of the Ring',
+    'Inception', 'Goodfellas', 'Star Wars', 'Seven Samurai', 'The Matrix', 'Forrest Gump',
+    'City of God'];
 function List() {
     this.listSize = 0;
     this.pos = 0;
@@ -25,7 +25,6 @@ function List() {
     this.getElement = getElement;
     this.length = length;
     this.contains = contains;
-    this.displayPeople = displayPeople;
 }
 function append(element) {
     this.dataStore[this.listSize++] = element;
@@ -100,52 +99,22 @@ function moveTo(position) {
 function getElement() {
     return this.dataStore[this.pos];
 }
-function displayPeople() {
-    for (var i = 0; i < this.dataStore.length; i++) {
-        if (this.dataStore[i].sex === "F") {
-            female.append(this.dataStore[i]);
+function checkOut(movieName) {
+        if (availableMovies.contains(movieName)) {
+            rentedMovies.append(movieName);
+            availableMovies.remove(movieName);
+            console.log(movieName + " is rented out.");
+        }else{
+            console.log(movieName + " is not available.");
         }
-    }
-    for (var i = 0; i < this.dataStore.length; i++) {
-        if (this.dataStore[i].sex === "M") {
-            male.append(this.dataStore[i]);
-        }
-    } 
-    console.log("\nFemales: ");
-    for(var f = 0; f < female.dataStore.length; f++){   
-        console.log("\t" + female.dataStore[f].name);
-    }
-    console.log("\nMales: ");
-    for(var m = 0; m < male.dataStore.length; m++){
-        console.log("\t" + male.dataStore[m].name);
-    }
 }
 
-var male = new List();
-var female = new List();
-var people = new List();
-
+var availableMovies = new List();
+for (var i = 0; i < movies.length; i++) {
+    availableMovies.append(movies[i]);
+}
+var rentedMovies = new List();
 function run() {
-    var person1 = new Person("Allen", "M");
-    var person2 = new Person("Neo", "F");
-    var person3 = new Person("Bryan", "M");
-    var person4 = new Person("Alice", "F");
-    var person5 = new Person("Johnny", "M");
-    var person6 = new Person("Ricky", "M");
-    var person7 = new Person("Johnny", "M");
-    var person8 = new Person("Jane", "F");
-    var person9 = new Person("Tshiamo", "F");
-    var person10 = new Person("Tshepo", "M");
-    people.append(person1);
-    people.append(person2);
-    people.append(person3);
-    people.append(person4);
-    people.append(person5);
-    people.append(person6);
-    people.append(person7);
-    people.append(person8);
-    people.append(person9);
-    people.append(person10);
-    people.displayPeople();
-};
-run(); 
+    checkOut("12 Angry Men");
+
+}
