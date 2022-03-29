@@ -207,21 +207,63 @@ function List() {
 function GreaterThan(element) {
     for (var i = 0; i < this.dataStore.length; ++i){
         if (element > this.dataStore[i]) {
-            this.dataStore[this.listSize++] - element;
+            this.dataStore[this.listSize++] = element;
             break;
         }
     }
 }
-var numList = new List();
+
+function run() {
+    var numList = new List();
 numList.append(23);
 numList.append(4);
 numList.append(24);
 numList.append(51);
 numList.append(89);
 numList.append(100);
+numList.GreaterThan(10);
+}
+run();
 
 //Question 3
 
+function List() {
+    this.listSize = 0;
+    this.pos = 0;
+    this.dataStore = []; // initializes an empty array to store list elements
+    this.clear = clear;
+    this.find = find;
+    this.toString = toString;
+    this.insert = insert;
+    this.append = append;
+    this.remove = remove;
+    this.front = front;
+    this.end = end;
+    this.prev = prev;
+    this.next = next;
+    this.length = length;
+    this.currPos = currPos;
+    this.moveTo = moveTo;
+    this.getElement = getElement;
+    this.length = length;
+    this.contains = contains;
+   }
+   function append(element) {
+    this.dataStore[this.listSize++] = element;
+   }
+
+   function clear() {
+    delete this.dataStore;
+    this.dataStore = [];
+    this.listSize = this.pos = 0;
+   }
+   function insert(element, after) {
+    var insertPos = this.find(after);
+    if (insertPos > -1) {
+    this.dataStore.splice(insertPos+1, 0, element);
+    ++this.listSize;
+    return true;
+    }
 function student(name, gender) {
     this.name = name;
     this.gender = gender;
@@ -233,14 +275,28 @@ var std3 = new student("Ricky", "M");
 var std4 = new student("Jon", "F");
 var std5 = new student("Lerato", "F");
 var std6 = new student("Karabo", "F");
-var std7
+var std7 = new student("Ricky", "M");
+var std8 = new student("Jack", "M");
+var std9 = new student("Johnny", "M");
+var std10 = new student("Bentley", "M");
 
 var students = new List();
 
-students.append("John", "M");
-students.append("Alice", "F");
-students.append("Ricky", "M");
-students.append("Jon", "F");
-students.append("Lerato", "F");
-students.append("Karabo", "F");
-students.append("")
+students.append(std1);
+students.append(std2);
+students.append(std3);
+students.append(std4);
+students.append(std5);
+students.append(std6);
+students.append(std7);
+students.append(std8);
+students.append(std9);
+students.append(std10);
+
+function find(student) {
+    for (var i=0; i < student.length; i++) {
+        if (this.gender[i] = "M") {
+            return students[i];
+        }
+    }
+}
