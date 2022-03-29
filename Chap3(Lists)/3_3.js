@@ -1,8 +1,7 @@
-//Question 3
 class Person {
-    constructor(name, gender) {
+    constructor(name, sex) {
         this.name = name;
-        this.gender = gender;
+        this.sex = sex;
     }
 }
 function List() {
@@ -126,26 +125,16 @@ var female = new List();
 var people = new List();
 
 function run() {
-    var person1 = new Person("Allen", "M");
+    var person1 = new Person("Sipho", "M");
     var person2 = new Person("Neo", "F");
-    var person3 = new Person("Bryan", "M");
-    var person4 = new Person("Alice", "F");
-    var person5 = new Person("Johnny", "M");
-    var person6 = new Person("Ricky", "M");
-    var person7 = new Person("Johnny", "M");
-    var person8 = new Person("Jane", "F");
-    var person9 = new Person("Tshiamo", "F");
-    var person10 = new Person("Tshepo", "M");
+    var person3 = new Person("Dyllan", "M");
+    var person4 = new Person("Fiona", "F");
+    var person5 = new Person("Mike", "M");
+
     people.append(person1);
     people.append(person2);
     people.append(person3);
     people.append(person4);
     people.append(person5);
-    people.append(person6);
-    people.append(person7);
-    people.append(person8);
-    people.append(person9);
-    people.append(person10);
     people.displayPeople();
 }
-   
