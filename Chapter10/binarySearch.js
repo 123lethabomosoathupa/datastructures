@@ -232,5 +232,9 @@ console.log(bst.isBalanced());
 console.log("inOrder: " + bst.inOrder());
 console.log("preOrder: " + bst.preOrder());
 console.log("postOrder: " + bst.postOrder());
-
 console.log("levelOrder: " + bst.levelOrder());
+
+console.log("Find Member: " + bst.find(22));
+console.log("Find Min: " + bst.findMin());
+console.log("Find Max: " + bst.findMax());
+console.log("Remove Member: " + bst.remove(20));

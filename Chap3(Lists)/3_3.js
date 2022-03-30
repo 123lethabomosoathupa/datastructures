@@ -138,3 +138,4 @@ function run() {
     people.append(person5);
     people.displayPeople();
 }
+run();
