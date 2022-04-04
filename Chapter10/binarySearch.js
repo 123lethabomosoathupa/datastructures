@@ -66,7 +66,7 @@ class BST {
         return null;
       }
     }
-    return current;
+    return current.data;
   }
   isPresent(data) {
     let current = this.root;
@@ -237,4 +237,4 @@ console.log("levelOrder: " + bst.levelOrder());
 console.log("Find Member: " + bst.find(22));
 console.log("Find Min: " + bst.findMin());
 console.log("Find Max: " + bst.findMax());
-console.log("Remove Member: " + bst.remove(20));
+console.log("Remove Member: " + bst.remove(17));
